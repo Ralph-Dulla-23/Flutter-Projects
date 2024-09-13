@@ -5,5 +5,5 @@ class Dentist{
     Dentist(this.id, this.name);
 
     @override
-    String toString() => 'Dr. $name (ID: $id)';
+    String toString() => 'Dr.$name (ID: $id)';
 }

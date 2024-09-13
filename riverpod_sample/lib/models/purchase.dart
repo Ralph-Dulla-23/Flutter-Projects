@@ -1,14 +1,14 @@
-import 'customer.dart';
-import 'product.dart';
+import 'patient.dart';
+import 'dentist.dart';
 
 class Purchase {
-  Customer customer;
-  Product product;
+  Patient patient;
+  Dentist dentist;
 
-  Purchase(this.customer, this.product);
+  Purchase(this.patient, this.dentist);
 
   @override
   String toString() {
-    return '${customer.name} bought ${product.name} (\$${product.price})';
+    return '${patient.name} bought ${dentist.name}';
   }
 }
