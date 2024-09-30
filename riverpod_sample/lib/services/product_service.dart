@@ -1,27 +1,28 @@
-import 'package:riverpod_sample/models/product.dart';
+import 'package:riverpod_sample/models/dentist.dart';
 import 'package:riverpod/riverpod.dart';
 
-class ProductService {
+class DentistService {
   final Ref container;
-  final List<Product> _products = [];
+  final List<Dentist> _dentists = [];
 
-  ProductService(this.container);
+  DentistService(this.container);
 
-  void addProduct(String name, double price) {
-    _products.add(Product(name, price));
-    print('$name (\$$price) has been added.');
+  void addDentist(String id, String name) {
+    final newDentist = Dentist(id, name);
+    _dentists.add(newDentist);
+    print('ID: $id, Dr.$name has been added.');
   }
 
-  void viewProducts() {
-    if (_products.isEmpty) {
-      print('No products available.');
+  void viewdentists() {
+    if (_dentists.isEmpty) {
+      print('No Dentists available.');
     } else {
-      print('Products:');
-      for (var product in _products) {
-        print(product);
+      print('Dentists:');
+      for (var dentist in _dentists) {
+        print(dentist);
       }
     }
   }
 
-  List<Product> get products => _products;
+  List<dentist> get dentists => _dentists;
 }
